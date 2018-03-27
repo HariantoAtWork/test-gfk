@@ -32,7 +32,9 @@ const filterAnswer = (value, list) => list.filter(x => x['ANSWER'] === value)
 
 
 const attachElement = (elementById, list) => {
-    const labels = _.uniq(list.map(data => data['DATE']))
+    const labels = list
+        .map(data => data['DATE'])
+        .filter((value, index, self) => self.indexOf(value) === index)
     const data = []
     labels.forEach(label => {
         const amount = list.filter(item => item['DATE'] === label).length
@@ -46,9 +48,10 @@ const attachElement = (elementById, list) => {
             labels: labels,
             datasets: [{
                 label: 'Yes',
-                backgroundColor: 'red',
-                borderColor: 'blue',
-                data: data
+                backgroundColor: 'rgba(0,0,0,.2)',
+                borderColor: 'grey',
+                data: data,
+                steppedLine: 'before'
             }]
         },
         options: {
