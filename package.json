@@ -4,6 +4,7 @@
   "description": "Front End Test GFK",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/HariantoAtWork/test-gfk/issues"
   },
-  "homepage": "https://github.com/HariantoAtWork/test-gfk#readme"
+  "homepage": "https://github.com/HariantoAtWork/test-gfk#readme",
+  "dependencies": {
+    "node-fetch": "^2.1.2"
+  }
 }
